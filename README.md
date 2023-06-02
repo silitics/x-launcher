@@ -43,6 +43,8 @@ An `xfile` is interpreted in one of two ways:
 
 In any case, arguments passed to `x` are forwarded to whatever is launched.
 
+Note that on Unix-like systems, contributes without X-Launcher installed can still launch the `xfile` with a shebang manually, i.e., using X-Launcher is completely optional.
+
 
 ## Contributing
 
