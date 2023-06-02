@@ -58,6 +58,7 @@ fn main() -> Result<(), Box<dyn Error>> {
         parse_command(src)?
     } else if let Some(src) = src.strip_prefix(">") {
         let mut cmd = parse_command(src)?;
+        cmd.env("X_INVOCATION_DIR", env::current_dir()?);
         cmd.current_dir(xfile.parent().unwrap());
         cmd
     } else {
