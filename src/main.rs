@@ -50,7 +50,9 @@ fn main() -> Result<(), Box<dyn Error>> {
     let mut cmd = if let Some(src) = src.strip_prefix("#!") {
         if cfg!(target_os = "windows") {
             let (command, _) = src.split_once("\n").unwrap();
-            parse_command(command)?
+            let mut cmd = parse_command(command)?;
+            cmd.arg(&xfile);
+            cmd
         } else {
             std::process::Command::new(&xfile)
         }
