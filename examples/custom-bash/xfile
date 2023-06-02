@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+COMMAND=${1:-help}
+
+case $COMMAND in
+    "help")
+        echo "usage: xfile <command>"
+        echo "commands: help, build, test"
+        ;;
+    "build"):
+        echo "Building the project takes some time..."
+        sleep 10
+        echo "Done!"
+        ;;
+    "test"):
+        echo "Testing takes even more time..."
+        sleep 20
+        echo "Done!"
+        ;;
+esac

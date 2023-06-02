@@ -1,0 +1,48 @@
+#!/usr/bin/env python3
+
+import sys
+import time
+
+
+def run_help():
+    print("usage: xfile <command>")
+    print("commands:", ", ".join(COMMANDS))
+
+
+def run_build():
+    print("Building the project takes some time...")
+    time.sleep(10)
+    print("Done!")
+
+
+def run_test():
+    run_build()
+    print("Testing takes even more time...")
+    time.sleep(20)
+    print("Done!")
+
+
+COMMANDS = {
+    "help": run_help,
+    "build": run_build,
+    "test": run_test,
+}
+
+
+def main():
+    if len(sys.argv) > 1:
+        cmd = sys.argv[1]
+    else:
+        cmd = "help"
+    try:
+        run = COMMANDS[cmd]
+    except KeyError:
+        print(f"invalid command: `{cmd}`")
+        print("valid commands are:", ", ".join(COMMANDS))
+        sys.exit(1)
+    else:
+        run()
+
+
+if __name__ == "__main__":
+    main()

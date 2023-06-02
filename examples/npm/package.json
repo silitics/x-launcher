@@ -1,0 +1,12 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Testing the project takes some time...\" && sleep 10 && echo \"Done!\"",
+    "dev": "echo \"Development server is running...\" && sleep 10000"
+  },
+  "author": "Silitics GmbH <info@silitics.com>",
+  "license": "ISC"
+}

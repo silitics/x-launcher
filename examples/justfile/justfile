@@ -1,0 +1,15 @@
+# Lists the available commands.
+default:
+    just --list
+
+# Builds the project.
+build:
+    @echo "Building the project takes some time..."
+    @sleep 10
+    @echo "Done!"
+
+# Tests the project.
+test: build
+    @echo "Testing takes even more time..."
+    @sleep 20
+    @echo "Done!"
