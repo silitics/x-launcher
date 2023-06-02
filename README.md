@@ -43,7 +43,7 @@ In any case, arguments passed to `x` are forwarded to whatever is launched.
 
 ## Contributing
 
-We do accept bug fixes and are open to [discuss ideas](https://github.com/silitics/x-launcher/discussions/categories/ideas). However, note that X-Launcher is intentionally kept very simple. There are already many great tools out there solving different project automation needs. X-Launcher is, as the name suggests, just a launcher and does not aim be more. Hence, we will likely reject any contributions extending X-Launcher beyond the purpose of launching.
+We do accept bug fixes and improvements, and are open to [discuss ideas](https://github.com/silitics/x-launcher/discussions/categories/ideas). However, note that X-Launcher is intentionally kept very simple. There are already many great tools out there solving different project automation needs. X-Launcher is, as the name suggests, just a launcher and does not aim be more. Hence, we will likely reject any contributions extending X-Launcher beyond the purpose of launching.
 
 
 ## Licensing
