@@ -2,6 +2,9 @@
 name = "x-launcher"
 version = "0.1.0"
 edition = "2021"
+description = "A cross-platform tool-agnostic project automation launcher."
+license = "MIT OR Apache-2.0"
+authors = ["Silitics GmbH <info@silitics.com>"]
 
 [dependencies]
 shell-words = "1.1.0"
