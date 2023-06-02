@@ -5,7 +5,7 @@
     A cross-platform tool-agnostic project automation launcher.
 </h4>
 <p align="center">
-  <a href="https://github.com/silitics/x-launcher/tree/readme#%EF%B8%8F-licensing"><img alt="License: MIT OR Apache 2.0" src="https://img.shields.io/crates/l/x-launcher"></a>
+  <a href="https://github.com/silitics/x-launcher#licensing"><img alt="License: MIT OR Apache 2.0" src="https://img.shields.io/crates/l/x-launcher"></a>
   <a href="https://crates.io/crates/x-launcher"><img alt="X-Launcher Rust Crate" src="https://img.shields.io/crates/v/x-launcher?label=crates.io"></a>  
 </p>
 
