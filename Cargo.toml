@@ -1,0 +1,11 @@
+[package]
+name = "x-launcher"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+shell-words = "1.1.0"
+
+[[bin]]
+name = "x"
+path = "src/main.rs"
