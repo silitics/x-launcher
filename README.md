@@ -9,7 +9,7 @@
   <a href="https://crates.io/crates/x-launcher"><img alt="X-Launcher Rust Crate" src="https://img.shields.io/crates/v/x-launcher?label=crates.io"></a>  
 </p>
 <p align="center">
-  🚧 X-Launcher is still experimental and has not been thoroughly tested. 🚧
+  <strong>🚧 X-Launcher is still experimental and has not been thoroughly tested. 🚧</strong>
 </p>
 
 💡 **TL;DR**: X-Launcher is a simple binary `x` which, when executed, scans for an `xfile` starting in the invocation directory and working its way up. When it finds an `xfile`, it uses it to launch project-specific tooling either (a) by executing the `xfile` itself or (b) delegating to a third-party tool (e.g., `cargo`, `make`, or `npm`).
