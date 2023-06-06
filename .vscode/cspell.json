@@ -4,6 +4,8 @@
         "POSIX",
         "Silitics",
         "xfile",
-        "xtask"
+        "xproject",
+        "xtask",
+        "xvenv"
     ]
 }

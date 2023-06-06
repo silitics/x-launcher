@@ -1,0 +1,85 @@
+#!/usr/bin/env python3
+
+"""
+This demonstrates a more complex usage of a Python-based `xfile` which sets up a virtual
+environment with all the dependencies required by the project tooling. This may go even
+further such as recreating the virtual environment upon any changes to the `xfile`.
+"""
+
+import os
+import sys
+
+
+PROJECT_PATH = os.path.dirname(__file__)
+
+PYTHON_EXE = "python" if os.name != "nt" else "python.exe"
+
+TRY_VERSIONS = ["python3.11", "python3.10", "python3", "python"]
+
+VENV_PATH = os.path.join(PROJECT_PATH, ".xvenv")
+VENV_PATH_BIN = os.path.join(VENV_PATH, "bin")
+
+VENV_PYTHON = os.path.join(VENV_PATH_BIN, PYTHON_EXE)
+
+X_REQUIREMENTS = """
+click>=8.1
+"""
+
+
+def ensure_version():
+    if sys.version_info < (3, 10):
+        import shutil
+
+        for version in TRY_VERSIONS:
+            path = shutil.which(version)
+            if path is not None and path != sys.executable:
+                os.execvp(path, [sys.argv[0], __file__] + sys.argv[1:])
+
+        print("[xfile] Error finding Python version >= 3.10.", file=sys.stderr)
+        sys.exit(1)
+
+
+def ensure_venv():
+    if sys.executable == VENV_PYTHON:
+        return
+    if not os.path.isdir(VENV_PATH):
+        print("[xfile] Creating virtual environment...", file=sys.stderr)
+        import subprocess
+
+        subprocess.check_call(
+            [sys.executable, "-m", "venv", VENV_PATH, "--upgrade-deps"],
+            stdout=subprocess.DEVNULL,
+        )
+        assert os.path.isdir(VENV_PATH), "Failed to create virtual environment."
+    os.environ["PATH"] = VENV_PATH_BIN + ":" + os.environ["PATH"]
+    os.execvp(VENV_PYTHON, [sys.argv[0], __file__] + sys.argv[1:])
+
+
+def ensure_requirements():
+    import subprocess
+    import pathlib
+
+    x_requirements = pathlib.Path(VENV_PATH) / "x-requirements.txt"
+
+    if not x_requirements.is_file() or x_requirements.read_text() != X_REQUIREMENTS:
+        print("[xfile] Installing dependencies...", file=sys.stderr)
+        x_requirements.write_text(X_REQUIREMENTS)
+        subprocess.check_call(
+            ["pip", "install", "-r", x_requirements], stdout=subprocess.DEVNULL
+        )
+
+
+def main():
+    ensure_version()
+    ensure_venv()
+    ensure_requirements()
+
+    sys.path.append(PROJECT_PATH)
+
+    from xproject.__main__ import main
+
+    main()
+
+
+if __name__ == "__main__":
+    main()
