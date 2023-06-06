@@ -3,7 +3,7 @@
 """
 This demonstrates a more complex usage of a Python-based `xfile` which sets up a virtual
 environment with all the dependencies required by the project tooling. This may go even
-further such as recreating the virtual environment upon any changes to the `xfile`.
+further such as recreating the virtual environment whenever the `xfile` changes.
 """
 
 import os
