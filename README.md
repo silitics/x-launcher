@@ -43,7 +43,7 @@ An `xfile` is interpreted in one of two ways:
 
 In any case, arguments passed to `x` are forwarded to whatever is launched.
 
-Note that in both cases, at least on Unix-like systems, the use of X-Launcher is entirely optional. In case of an `xfile` script with a shebang, the script can still be launched manually, and in case of a command, the command can be directly executed without going through `x`. Hence, X-Launcher is just a convenience.
+Note that in both cases, at least on Unix-like systems, the use of X-Launcher is entirely optional. In case of an `xfile` script with a shebang, the script can still be launched manually, and in case of a command, the command can be directly executed without going through `x`. Hence, X-Launcher is a mere convenience.
 
 
 ## Contributing
