@@ -76,9 +76,9 @@ def main():
 
     sys.path.append(PROJECT_PATH)
 
-    from xproject.__main__ import main
+    from xproject.__main__ import main as xproject
 
-    main()
+    xproject()
 
 
 if __name__ == "__main__":
