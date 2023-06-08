@@ -51,7 +51,7 @@ def ensure_venv():
             stdout=subprocess.DEVNULL,
         )
         assert os.path.isdir(VENV_PATH), "Failed to create virtual environment."
-    os.environ["PATH"] = VENV_PATH_BIN + ":" + os.environ["PATH"]
+    os.environ["PATH"] = VENV_PATH_BIN + os.pathsep + os.environ["PATH"]
     os.execvp(VENV_PYTHON, [sys.argv[0], __file__] + sys.argv[1:])
 
 
